@@ -1,4 +1,4 @@
-# My portfolio site [im progress]
+# My portfolio site [in progress]
 
 ## 🧞 Commands
 
