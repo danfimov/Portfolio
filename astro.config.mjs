@@ -2,12 +2,6 @@ import { defineConfig } from 'astro/config';
 
 import react from "@astrojs/react";
 
-if (import.meta.env?.PORT === undefined) {
-  const env_port = 8080
-}
-else {
-  const env_port = Number(import.meta.env?.PORT)
-}
 
 export default defineConfig(
   {
@@ -17,6 +11,8 @@ export default defineConfig(
       syntaxHighlight:'shiki',
     },
     output: 'static',
+    site: 'https://danfimov.github.io',
+    base: '/Portfolio',
     server: { port: import.meta.env?.PORT | 3000 }
   }
 );
