@@ -1,11 +1,14 @@
 import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
-import vercel from '@astrojs/vercel/serverless';
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [preact()],
-	"cleanUrls": true,
-	output: 'server',
-	adapter: vercel(),
+  integrations: [react()],
+  markdown: {
+    // Example: Switch to use prism for syntax highlighting in Markdown
+    syntaxHighlight:'shiki',
+  },
+  site: 'https://danfimov.github.io',
+  base: '/portfolio',
 });

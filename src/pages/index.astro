@@ -1,239 +1,66 @@
 ---
-// Component Imports
-import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button/index.jsx';
-import Nav from '../components/Nav/index.jsx';
-import Footer from '../components/Footer/index.jsx';
-import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import Layout from '../layouts/Layout.astro';
 
-// Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob('./project/**/*.md');
-const featuredProject = projects[0];
+import ArticlePreview from '../components/ArticlePreview.astro'
+import ProjectPreview from '../components/ProjectPreview.astro'
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import profile_pic from '../images/profile-icon.jpeg'
+
+let posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
+posts = posts.filter((post) => !post.frontmatter.draft);
+
+
+let projects = (await Astro.glob('./projects/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
+projects = projects.filter((project) => !project.frontmatter.draft);
+
 ---
 
-<html lang="en">
-	<head>
-		<MainHead
-			title="Dima Anfimov: Personal Site"
-			description="Dima Anfimov - Eternal Junior Developer"
-		/>
-		<style lang="scss">
-			$w-s: 750px;
 
-			.hero {
-				position: relative;
-				overflow: hidden;
+<Layout title="Dima Anfimov">
 
-				@media (min-width: $w-s) {
-					height: 45vw;
-				}
-			}
 
-			.img {
-				display: block;
-				width: 100%;
-				height: auto;
-			}
 
-			.gradient,
-			.gradient2 {
-				background-image: url('/assets/mesh-gradient.jpg');
-				background-size: cover;
-				pointer-events: none;
-				mix-blend-mode: screen;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 2;
-			}
+	<section id="wrapper--hero" class="section--page">
+		<img id="profile-pic" src={profile_pic}/>
 
-			.gradient2 {
-				mix-blend-mode: multiply;
-				background-size: cover;
-			}
+		<div>
+			<h1 id="user-name">Dima Anfimov</h1>
+			<p id="bio">Backend developer at <a href="https://education.yandex.ru/" target="_blank">Yandex Schoolbook</a>.</p>
+		</div>  
+	</section>
 
-			.overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 10;
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-				justify-content: center;
-				padding-left: 2rem;
+	<section class="section--page">
+		<div id="socials--list">
+			<a href="https://www.linkedin.com/in/dmitry-a-720079142/" target="_blank">Linkedin</a>
+			<a href="https://github.com/LoveSolaristics" target="_blank">Github</a>
+			<a href="resume.pdf" target="_blank">Resume</a> 
+		</div>
+	</section>
 
-				@media (min-width: $w-s) {
-					padding-left: 4rem;
-				}
-			}
+	<section class="section--page">
+		<a id="projects"></a>
+		<h3>Latest Projects</h3>
 
-			.title {
-				font-weight: 900;
-				font-size: var(--f-u8);
-				margin-bottom: 0.5rem;
-				margin-top: 0;
+		{projects.map(project => (
+			<ProjectPreview frontmatter={project.frontmatter}/>
+		))}
 
-				@media (min-width: $w-s) {
-					font-size: var(--f-u12);
-				}
-			}
+	</section>
 
-			.grid {
-				display: grid;
-				grid-gap: 2rem;
+	
+	<section class="section--page">
+		<a id="blog"></a>
+		<h3>Latest Posts</h3>
 
-				@media (min-width: 1200px) {
-					grid-template-columns: 2fr 1fr;
-				}
-			}
+		{posts.map(post => (
+			<ArticlePreview frontmatter={post.frontmatter}/>
+		))}
 
-			.sectionTitle {
-				font-weight: 700;
-				font-size: var(--f-u8);
-				margin-top: 4rem;
-				margin-bottom: 2rem;
-			}
+	</section>
 
-			.role {
-				position: relative;
-				display: inline-block;
-				font-weight: 900;
-				color: var(--t-bg);
-				background-color: var(--t-fg);
-				padding: 0.25em 0.5em;
-				z-index: 2;
+</Layout>
 
-				@media (min-width: $w-s) {
-					font-size: var(--f-u3);
-				}
-
-				+ .role {
-					margin-left: 1em;
-				}
-
-				&:nth-of-type(1) {
-					.invert {
-						background-color: var(--c-pink);
-					}
-				}
-
-				&:nth-of-type(2) {
-					.invert {
-						background-color: var(--c-blue);
-					}
-				}
-
-				&:nth-of-type(3) {
-					.invert {
-						background-color: var(--c-green);
-					}
-				}
-
-				&:hover {
-					.invert {
-						clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-					}
-				}
-			}
-
-			.invert {
-				position: absolute;
-				color: var(--t-fg);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				pointer-events: none;
-				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
-				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
-			}
-
-			.desc {
-				font-size: var(--f-u2);
-				margin-top: 1.5rem;
-				margin-bottom: 0;
-			}
-
-			.subtitle {
-				display: block;
-				font-weight: 400;
-				font-size: var(--f-d6);
-				letter-spacing: -0.0625em;
-			}
-
-			.bio {
-				line-height: 2;
-				margin-bottom: 2rem;
-
-				> span:first-of-type {
-					line-height: 1;
-					margin-bottom: 0.5em;
-					display: block;
-					font-weight: 700;
-					font-size: var(--f-u4);
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Nav />
-		<header class="hero">
-			<img
-				width="1600"
-				height="1131"
-				class="img"
-				src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75"
-				srcset="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 800w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 1200w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=75 1600w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=2400&q=75 2400w"
-				sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
-			/>
-			<div class="gradient"></div>
-			<div class="gradient2"></div>
-			<div class="overlay">
-				<h1 class="title">
-					<small class="subtitle">The personal site of</small>Dima Anfimov
-				</h1>
-				<div>
-					<span class="role">🧑🏻‍💻 Python Developer <span class="invert">🧑🏻‍💻 Python Developer</span></span>&nbsp;
-					<span class="role">🚀 Astro Beginner<span class="invert">🚀 Astro Beginner</span></span>&nbsp;
-				</div>
-				<p class="desc">[TODO: put description here]</p>
-			</div>
-		</header>
-		<main class="wrapper mt4 mb4">
-			<div class="grid">
-				<div class="section">
-					<h3 class="sectionTitle">Selected Work</h3>
-					<PortfolioPreview project={featuredProject} />
-					<div class="tac mt4">
-						<a href="/projects">
-							<Button>View All</Button>
-						</a>
-					</div>
-				</div>
-				<div class="section">
-					<h3 class="sectionTitle">About me</h3>
-					<p class="bio">
-						<span>Hello!</span> I’m Dima, and this is my website. It was made using{' '}
-						<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
-						a new way to build static sites. This is just a first try with this framework.
-					</p>
-					<p>
-						<a href="/about">Read more</a>
-					</p>
-				</div>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
