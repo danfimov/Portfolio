@@ -23,7 +23,7 @@
 }
 
 *{
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', monospace;
     line-height: 1.9em;
     box-sizing: border-box;
     color: var(--mainTextColor);
@@ -114,6 +114,12 @@ nav a{
 
 #github--logo{
   width: 60px;
+  height: 50px;
+
+  & img{
+    width: 60px;
+    height: 50px;
+  }
 }
 
 .container--main{
@@ -177,7 +183,12 @@ nav a{
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border-radius: 50%;
+
+  & img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
 }
 
 #email{

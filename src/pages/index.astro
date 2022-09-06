@@ -5,6 +5,8 @@ import ArticlePreview from '../components/ArticlePreview.astro'
 import ProjectPreview from '../components/ProjectPreview.astro'
 
 import profile_pic from '../images/profile-icon.jpeg'
+import profile_pic_webp from '../images/profile-icon.webp'
+import profile_pic_avif from '../images/profile-icon.avif'
 
 let posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
@@ -25,7 +27,12 @@ projects = projects.filter((project) => !project.frontmatter.draft);
 
 
 	<section id="wrapper--hero" class="section--page">
-		<img id="profile-pic" src={profile_pic} alt="Author's photo"/>
+		<picture id="profile-pic">
+			<source type="image/webp" srcset={profile_pic_webp}>
+			<source type="image/avif" srcset={profile_pic_avif}>
+			<img  src={profile_pic} alt="Author's photo"/>
+		</picture>
+		
 
 		<div>
 			<h1 id="user-name">Dima Anfimov</h1>
@@ -42,7 +49,7 @@ projects = projects.filter((project) => !project.frontmatter.draft);
 	</section>
 
 	<section class="section--page">
-		<a id="projects"></a>
+		<a id="projects" name="projects"></a>
 		<h2>Latest Projects</h2>
 
 		{projects.map(project => (
@@ -53,7 +60,7 @@ projects = projects.filter((project) => !project.frontmatter.draft);
 
 	
 	<section class="section--page">
-		<a id="blog"></a>
+		<a id="blog" name="blog"></a>
 		<h2>Latest Posts</h2>
 
 		{posts.map(post => (
