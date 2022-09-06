@@ -10,5 +10,5 @@ export default defineConfig({
     syntaxHighlight:'shiki',
   },
   site: 'https://danfimov.github.io',
-  base: '/portfolio',
+  base: '/Portfolio',
 });
