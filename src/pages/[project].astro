@@ -3,19 +3,19 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { ArrowLeft,} from 'react-feather';
 
 export async function getStaticPaths() {
-    const events = await Astro.glob('./events/*.{md,mdx}')
+    const projects = await Astro.glob('./projects/*.{md,mdx}')
 
-    return events.map(event => ({
+    return projects.map(project => ({
         params: {
-            event:event.frontmatter.slug
+            project:project.frontmatter.slug
         },
         props: {
-            event
+            project
         }
     }))
 }
 
-const {Content, frontmatter} = Astro.props.event
+const {Content, frontmatter} = Astro.props.project
 ---
 
 <ArticleLayout title={frontmatter.title}>

@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 import react from "@astrojs/react";
-// import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +9,6 @@ export default defineConfig({
     // Example: Switch to use prism for syntax highlighting in Markdown
     syntaxHighlight:'shiki',
   },
-  "cleanUrls": true,
-	// output: 'server',
-	// adapter: vercel(),
+  site: 'https://danfimov.github.io',
+  base: '/portfolio',
 });
