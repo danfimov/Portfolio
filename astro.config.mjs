@@ -9,6 +9,8 @@ export default defineConfig({
     // Example: Switch to use prism for syntax highlighting in Markdown
     syntaxHighlight:'shiki',
   },
+  output: 'static',
   site: 'https://danfimov.github.io',
   base: '/Portfolio',
+  server: { port: import.meta.env?.PORT | 3000 }
 });
