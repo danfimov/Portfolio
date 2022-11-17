@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em;
+  
+    @media (max-width: 396px) {
+      padding: 1em;
+    }
+  }
+  
+  nav a{
+    color:#adb0b1;
+    font-size: 18px;
+  }
+  
+  #navbar{
+    display: flex;
+    gap: 2em;
+  }
+  
+  #navbar a{
+    color: var(--secondaryTextColor);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  

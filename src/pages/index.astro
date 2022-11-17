@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import ArticlePreview from '../components/ArticlePreview.astro'
-import ProjectPreview from '../components/ProjectPreview.astro'
+import ArticlePreview from '../components/article_preview/component.astro'
+import ProjectPreview from '../components/project_preview/component.astro'
 
 import profile_pic from '../images/profile-icon.jpeg'
 import profile_pic_webp from '../images/profile-icon.webp'
@@ -24,8 +24,6 @@ projects = projects.filter((project) => !project.frontmatter.draft);
 
 <Layout title="Dima Anfimov">
 
-
-
 	<section id="wrapper--hero" class="section--page">
 		<picture id="profile-pic">
 			<source type="image/webp" srcset={profile_pic_webp}>
@@ -44,7 +42,7 @@ projects = projects.filter((project) => !project.frontmatter.draft);
 		<div id="socials--list">
 			<a href="https://www.linkedin.com/in/dmitry-a-720079142/" target="_blank">Linkedin</a>
 			<a href="https://github.com/danfimov" target="_blank">Github</a>
-			<a href="resume.pdf" target="_blank">Resume</a> 
+			<a href="/Portfolio/resume">Resume</a> 
 		</div>
 	</section>
 

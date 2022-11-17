@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import profile_pic from '../images/profile-icon.jpeg'
+import profile_pic_webp from '../images/profile-icon.webp'
+import profile_pic_avif from '../images/profile-icon.avif'
+
+---
+<style>
+    #link-email{
+        font-weight: bold;
+        color: var(--mainBgColor-light)
+    }
+</style>
+
+
+<Layout title="Resume">
+    <section id="wrapper--hero" class="section--page">
+		<picture id="profile-pic">
+			<source type="image/webp" srcset={profile_pic_webp}>
+			<source type="image/avif" srcset={profile_pic_avif}>
+			<img  src={profile_pic} alt="Author's photo"/>
+		</picture>
+		
+
+		<div>
+			<h1 id="user-name">Dima Anfimov</h1>
+			<p id="bio">Backend developer at <a href="https://education.yandex.ru/" target="_blank">Yandex Schoolbook</a>.</p>
+            <p>👉 <a id='link-email' href="mailto:lovesolaristics@gmail.com">lovesolaristics@gmail.com</a></p>
+        </div>  
+	</section>
+
+    <section class="section--page">
+		<div id="socials--list">
+			<a href="https://www.linkedin.com/in/dmitry-a-720079142/" target="_blank">Linkedin</a>
+			<a href="https://github.com/danfimov" target="_blank">Github</a>
+			<a href="https://vk.com/lovesolaristics" target="_blank">VK</a> 
+            <input type="button" value="Save resume" onclick="window.print()"/>
+		</div>
+	</section>
+
+	<section class="section--page">
+		<h2>Skills & Qualifications</h2>
+
+		<ul class="skill_list">
+		    <li class="skill_list--item">✅ 1 Year experience with backend development</li>
+		    <li class="skill_list--item">✅ Extensive knowledge in API & Database Design</li>
+		    <li class="skill_list--item">✅ Experienced microservices creator</li>
+		</ul>
+
+		<h2>Tech stack</h2>
+		    <div class="wrapper--techs_tack__items">
+		        <div class="card--tech_stack">Python</div>
+		        <div class="card--tech_stack">FastAPI, Django</div>
+		        <div class="card--tech_stack">PostgreSQL</div>
+		    </div>
+
+		<h2>Work History</h2>
+
+		<div class="card--work-history">
+		    <h3>Backend developer | Yandex Schoolbook</h3>
+		    <p class="card--work-history--dates">01/2022 - Present</p>
+		</div>
+
+		<div class="card--work-history">
+            <h3>Freelancer</h3>
+            <p class="card--work-history--dates">02/2021 - 06/2021</p>
+            <p>Worked on tasks related to programming: writing term papers, doing various practical assignments and creating small projects.</p>
+            <ul>
+                <li> Creation of dashboards using the Streamlit library; </li>
+                <li> Using machine learning models to solve educational problems;</li>
+                <li> Development of educational HTML/CSS/JavaScript projects.</li>
+            </ul>
+        </div>
+
+        <div class="card--work-history">
+            <h3>Tutor</h3>
+            <p class="card--work-history--dates">02/2018 - 02/2021</p>
+            <p>
+            Worked as a remote tutor in mathematics and computer science, taught programming to children.
+            </p>
+            <ul>
+                <li>Conducting classes using distance learning technologies;</li>
+                <li>Create my own site for publishing lesson materials and homework.</li>
+            </ul>
+        </div>
+
+		<h2>Projects & Accomplishments</h2>
+	</section>
+</Layout>
