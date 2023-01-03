@@ -1,0 +1,56 @@
+title: About
+desc: Skills, work experience, and contact details
+layout: page.njk
+permalink: about/index.html
+
+# Intro
+
+intro:
+  photo: /images/photo.png
+  alt: Black and white portrait on a colored background.
+  who: I’m Dima Anfimov, backend developer based in Almaty
+  path: I started back in 2021 as a backend developer, learned how to make pet projects and mini-articles about that.
+  web: Now I'm trying to focus on the publicity of my work and commits to open-source projects.
+
+# Skills
+
+skills:
+  title: Skills
+  desc: Some of my favorite technologies, topics, or tools that I worked with
+  list:
+  - Python
+  - PostgreSQL
+  - Celery
+  - FastAPI
+  - SQLAlchemy
+  - Alembic
+
+# Work
+
+work:
+  title: Work
+  desc: Mostly backend development, but also little bit of project management
+  list:
+  - company: Yandex Schoolbook
+    title: Backend Developer
+    period: Dec 2022 – now
+  - company: Yandex Schoolbook
+    title: Junior Backend Developer
+    period: Jul 2022 – Nov 2022
+  - company: Yandex Schoolbook
+    title: Backend Developer Intern
+    period: Jan 2022 – Jun 2022
+
+
+# Contacts
+
+contacts:
+  title: Contacts
+  desc: You can get in touch with me via email or Telegram
+  list:
+  - title: work@danfimov.ru
+    url: mailto:work@danfimov.ru
+    icon: mail
+  - title: t.me/anfimov_work
+    url: https://t.me/anfimov_work
+    icon: telegram

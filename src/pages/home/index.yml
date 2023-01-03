@@ -1,0 +1,8 @@
+layout: page.njk
+permalink: index.html
+intro:
+  hi: Hi, my name is
+  name: Dima Anfimov
+  alt: Black and white portrait on a colored background.
+  who: I’m a backend developer in love with Python, programming and chess
+  what: Here you can find [my thoughts](/articles/) on web development, some of [my projects](/projects/), and information [about me](/about/)
