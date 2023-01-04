@@ -122,6 +122,38 @@
     color: var(--prism-red);
 }
 
+/* Python overrides */
+
+.prism :is(
+    .language-python .token.keyword
+) {
+    color: var(--prism-red);
+}
+
+.prism :is(
+    .language-python .token.operator,
+    .language-python .token.constant,
+    .language-python .token.boolean,
+    .language-python .token.number,
+    .language-python .token.atrule
+) {
+    color: var(--prism-blue);
+}
+
+.prism :is(
+    .language-python .token.function
+) {
+    color: var(--prism-purple);
+}
+
+.prism :is(
+    .language-python .token.attr-name,
+    .language-python .token.class-name,
+    .language-python .token.function-variable
+) {
+    color: var(--prism-brown);
+}
+
 /* JS overrides */
 
 .prism :is(
