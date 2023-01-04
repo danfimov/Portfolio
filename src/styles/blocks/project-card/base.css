@@ -2,7 +2,7 @@
 
 .project-card {
     --project-card-pet-projects-back: hsl(var(--color-lilac));
-    --project-card-podcasts-back: hsl(var(--color-sulu));
+    --project-card-activities-back: hsl(var(--color-sulu));
     --project-card-websites-back: hsl(var(--color-coral));
     --project-card-project-text: hsl(var(--color-ebony));
 }
@@ -24,8 +24,8 @@
     background-color: var(--project-card-pet-projects-back);
 }
 
-.project-card__box--podcasts {
-    background-color: var(--project-card-podcasts-back);
+.project-card__box--activities {
+    background-color: var(--project-card-activities-back);
 }
 
 .project-card__box--websites {

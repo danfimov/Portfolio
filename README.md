@@ -13,7 +13,7 @@ All commands are run from the root of the project, from a terminal:
 
 # Roadmap
 
-- [ ] Redesign cite
-- [ ] Wrote resume
-- [ ] Write about recommendation system
-- [ ] Write about calendar plan from inside
+- [ ] Create Figma template for covers
+- [ ] Change photo on main page/logo/covers
+- [ ] Write an article about recommendation system
+- [ ] Write an article about calendar plan from inside

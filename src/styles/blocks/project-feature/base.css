@@ -2,7 +2,7 @@
 
 .project-feature {
     --project-feature-back-pet-projects: hsl(var(--color-lilac));
-    --project-feature-back-podcasts: hsl(var(--color-sulu));
+    --project-feature-back-activities: hsl(var(--color-sulu));
     --project-feature-back-websites: hsl(var(--color-coral));
     --project-feature-text-primary: hsl(var(--color-ebony));
     --project-feature-scribble-margin: 8px;
@@ -23,8 +23,8 @@
     background-color: var(--project-feature-back-pet-projects);
 }
 
-.project-feature--podcasts {
-    background-color: var(--project-feature-back-podcasts);
+.project-feature--activities {
+    background-color: var(--project-feature-back-activities);
 }
 
 .project-feature--websites {

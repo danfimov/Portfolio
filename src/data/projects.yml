@@ -27,6 +27,27 @@
         - Aiohttp
         - SQLAlchemy
 
+
+# Activities
+
+- title: Activities
+  desc: Activities in which I take part - solving problems and participating in competitions
+  projects:
+
+    - title: Leetcode
+      desc: Regular training in solving problems using various algorithms
+      url: https://leetcode.com/danfimov/
+      tags:
+        - Algorithms
+        - Puzzle solving
+
+    - title: CodInGame
+      desc: Bot programming competitions and some puzzle trainings
+      url: https://www.codingame.com/profile/57eb4eda2769a20faf47b33d700578e69669943
+      tags:
+        - AI competitions
+        - Puzzle solving
+
 # Websites
 
 - title: Websites

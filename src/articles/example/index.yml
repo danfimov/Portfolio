@@ -1,0 +1,14 @@
+title: 'Example article'
+desc: 'Some example of a description.'
+date: 2022-11-25
+tags:
+  - Python
+  - Example
+toc:
+  - title: First title
+  - title: Second title
+    items:
+      - Python
+      - Example
+cover: true
+layout: article.njk
