@@ -16,8 +16,13 @@
     row-gap: 20px;
     padding-inline: 20px;
     border-radius: 20px;
-    background-color: var(--project-card-box-back);
+    background-color: var(--project-card-pet-projects-back);
     color: var(--project-card-project-text);
+}
+
+.project-card__box:hover {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
 }
 
 .project-card__box--pet-projects {
