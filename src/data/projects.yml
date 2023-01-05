@@ -1,0 +1,62 @@
+# Pet-projects
+
+- title: Pet-projects
+  desc: Little projects that I created for myself during self-studying.
+  projects:
+
+    - title: Cinemabot
+      desc: Telegram bot for finding some film by it's name
+      url: https://github.com/danfimov/cinemabot
+      tags:
+        - Python
+        - Aiogram
+        - SQLAlchemy
+
+    - title: Little step to ML
+      desc: An educational project that provides a visual introduction to data manipulation tools using libraries like Pandas and Numpy
+      url: https://github.com/danfimov/Easy-ML
+      tags:
+        - Python
+        - Streamlit
+
+    - title: API for messenger
+      desc: A small project made as part of the School of Backend Development from Yandex
+      url: https://github.com/danfimov/messenger-api
+      tags:
+        - Python
+        - Aiohttp
+        - SQLAlchemy
+
+
+# Activities
+
+- title: Activities
+  desc: Activities in which I take part - solving problems and participating in competitions
+  projects:
+
+    - title: Leetcode
+      desc: Regular training in solving problems using various algorithms
+      url: https://leetcode.com/danfimov/
+      tags:
+        - Algorithms
+        - Puzzle solving
+
+    - title: CodInGame
+      desc: Bot programming competitions and some puzzle trainings
+      url: https://www.codingame.com/profile/57eb4eda2769a20faf47b33d700578e69669943
+      tags:
+        - AI competitions
+        - Puzzle solving
+
+# Websites
+
+- title: Websites
+  desc: Mostly useless, but funny or nostalgic enough to justify paying for a domain name.
+  projects:
+
+    - title: Web course for NArFU
+      desc: Presentation for mastering the discipline "Web-technologies" (and built with this technologies)
+      url: https://danfimov.github.io/shower-presentation/
+      tags:
+        - Web
+        - Shower

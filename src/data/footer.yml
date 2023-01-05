@@ -1,0 +1,20 @@
+social:
+    title: Links
+    list:
+        - title: Telegram
+          url: https://t.me/anfimov_work
+        - title: LinkedIn
+          url: https://www.linkedin.com/in/dmitry-a-720079142/
+
+email:
+    title: Email
+    text: work@<wbr>danfimov.ru
+    link: mailto:work@danfimov.ru
+
+credits:
+    title: Credits
+    list:
+        - title: Handcrafted and designed by me
+          url: https://github.com/danfimov
+        - title: Powered by Eleventy
+          url: https://11ty.dev/

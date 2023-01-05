@@ -1,14 +1,19 @@
 # My portfolio site [in progress]
 
-## 🧞 Commands
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dc3f6b81-9bcc-4812-9066-c503e14060a9/deploy-status)](https://app.netlify.com/sites/danfimov/deploys)
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+|:-----------------------|:-------------------------------------------------|
+| `TBD`                  | TBD                                              |
+
+
+# Roadmap
+
+- [ ] Create Figma template for covers
+- [ ] Change photo on main page/logo/covers
+- [ ] Write an article about recommendation system
+- [ ] Write an article about calendar plan from inside

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danfimov.site/sitemap.xml
